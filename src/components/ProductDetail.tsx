@@ -8,7 +8,6 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import { Icons } from "./Icons";
-import Rating from "react-rating";
 import { Button } from "./ui/Button";
 import Recommendations from "./Recommendations";
 import { useDispatch, useSelector } from "react-redux";
@@ -26,6 +25,8 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState<number>(1);
   const { cart, wishlist } = useSelector(selectShop);
   const [isAddingToCart, setIsAddingToCart] = useState<boolean>(false);
+
+  const roundedRating = Math.round(data?.rating?.rate);
 
   return (
     <>
@@ -78,21 +79,23 @@ const ProductDetail = () => {
                 </h4>
                 <div className="mb-4 sm:mb-8 flex gap-2 items-center">
                   <div className="flex gap-4 items-center">
-                    <Rating
-                      start={0}
-                      stop={5}
-                      step={1}
-                      direction="ltr"
-                      readonly={true}
-                      initialRating={data?.rating?.rate}
-                      emptySymbol={
-                        <Icons.star className="h-4 w-4 text-zinc-300 fill-accent" />
-                      }
-                      fullSymbol={
-                        <Icons.star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-                      }
-                      fractions={10}
-                    />
+                    {Array(roundedRating)
+                      .fill(0)
+                      .map((_, index) => (
+                        <Icons.star
+                          key={index}
+                          className="h-4 w-4 text-yellow-400 fill-yellow-400"
+                        />
+                      ))}
+
+                    {Array(5 - roundedRating)
+                      .fill(0)
+                      .map((_, index) => (
+                        <Icons.star
+                          key={index}
+                          className="h-4 w-4 text-zinc-300 fill-accent"
+                        />
+                      ))}
                   </div>
                   <span className="text-[12px] text-zinc-400">
                     ({data?.rating?.count})
