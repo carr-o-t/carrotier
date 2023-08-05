@@ -70,12 +70,6 @@ const shopSlice = createSlice({
         (state, action) => {
           state.categories = action.payload; // Assuming action.payload contains the list of jobs
         }
-      ),
-      builder.addMatcher(
-        shopAPI.endpoints.listCart.matchFulfilled,
-        (state, action) => {
-          state.cart = action.payload; // Assuming action.payload contains the list of jobs
-        }
       );
   },
 });

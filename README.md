@@ -1,6 +1,6 @@
 # Carrotier - E-commerce shop
 
-This repository contains the code for the E-commerce web application built using Next.js. The project utilizes various technologies and tools such as Husky, TypeScript, Prettier, ESLint, and Tailwind CSS.
+This repository contains the code for the E-commerce web application built using Next.js. The project utilizes various technologies and tools such as Husky, TypeScript, Redux Toolkit, ESLint, and Tailwind CSS.
 
 ## Table of Contents
 
@@ -25,10 +25,11 @@ This repository contains the code for the E-commerce web application built using
 
 ## Roadmap
 
-- [ ] navbar
-- [ ] home page
-- [ ] cart page
-- [ ] wishlist page
+- [x] ~navbar~
+- [x] ~home page~
+- [x] ~my cart~
+- [x] ~my wishlist~
+- [x] ~product detail page~
 
 ## Prerequisites
 
@@ -85,7 +86,7 @@ To run this project locally, follow these steps:
 1. Clone the repository using HTTPS:
 
 ```bash
-git clone https://github.com/studymitr-inc/hirepal.ai-frontend-user-dashboard.git
+git clone https://github.com/carr-o-t/carrotier.git
 ```
 
 or
@@ -93,13 +94,13 @@ or
 Clone the repository using SSH (if you have set up an SSH key):
 
 ```bash
-git clone git@github.com:studymitr-inc/hirepal.ai-frontend-user-dashboard.git
+git clone git@github.com:carr-o-t/carrotier.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd hirepal.ai-frontend-user-dashboard
+cd carrotier
 ```
 
 3. Install the dependencies:
@@ -118,12 +119,16 @@ npm run dev
 
 Open your web browser and visit `http://localhost:3000` to access the application.
 
+> while running the project locally, if you encounter the >following error, please consider upgrading your `nodejs` version.
+
 ## Technology Stack
 
 - [Next.js](https://nextjs.org): A React framework for building server-rendered applications.
 - [TypeScript](https://www.typescriptlang.org): A typed superset of JavaScript that enhances code quality and developer productivity.
+- [Redux Toolkit](https://redux-toolkit.js.org/): A A powerful state management tool.
 - [ESLint](https://eslint.org): A pluggable JavaScript linter that helps identify and fix common code issues.
 - [Tailwind CSS](https://tailwindcss.com): A utility-first CSS framework for building custom user interfaces.
+- [Shadcn UI](https://ui.shadcn.com/): A collection of re-usable components built using Radix UI and Tailwind CSS.
 
 ## Folder Structure
 
@@ -132,9 +137,11 @@ The project follows a common folder structure for a Next.js application:
 - `/components`: Contains reusable React components.
 - `/app`: contains pages route
 - `/public`: Stores static assets such as images and fonts.
-- `/styles`: Holds global CSS styles and Tailwind CSS configuration.
+- `/app/globals.css`: Holds global CSS styles and Tailwind CSS configuration.
+- `/redux`: Holds the app states.
 
 ## Acknowledgements
 
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Shadcn UI Documentation](https://ui.shadcn.com/docs)
