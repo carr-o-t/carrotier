@@ -120,6 +120,19 @@ npm run dev
 Open your web browser and visit `http://localhost:3000` to access the application.
 
 > while running the project locally, if you encounter the >following error, please consider upgrading your `nodejs` version.
+>
+> ```bash
+> showAll: args["--show-all"] ?? false,
+>                                         ^
+> SyntaxError: Unexpected token '?'
+>    at wrapSafe (internal/modules/cjs/loader.js:915:16)
+>    at Module._compile (internal/modules/cjs/loader.js:963:27)
+>     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+>     at Module.load (internal/modules/cjs/loader.js:863:32)
+>     at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+>     at Module.require (internal/modules/cjs/loader.js:887:19)
+>     at require (internal/modules/cjs/helpers.js:74:18)
+> ```
 
 ## Technology Stack
 
